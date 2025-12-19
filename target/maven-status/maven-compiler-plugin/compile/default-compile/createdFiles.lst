@@ -1,0 +1,5 @@
+com\ibkWeb\auto\config\EnvironmentManager.class
+com\ibkWeb\auto\drivers\DriverFactory.class
+com\ibkWeb\auto\utils\DateUtils.class
+com\ibkWeb\auto\db\DBConnection.class
+com\ibkWeb\auto\utils\FileUtils.class
