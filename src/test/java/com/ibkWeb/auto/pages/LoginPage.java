@@ -3,6 +3,7 @@ import com.ibkWeb.auto.locator.LoginLocators;
 import net.serenitybdd.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 
 public class LoginPage extends BasePage {
@@ -20,19 +21,20 @@ public class LoginPage extends BasePage {
     }
 
 
-    @Step("Validar mensaje de bienvenida esperado: {0}")
+    @Step("Validar mensaje de bienvenida esperado")
     public void validarMensajeBienvenida() {
-        if (!this.waitForVisible(LoginLocators.getWelcomeMsg())) {
+        WebElement welcomeMsg = this.waitForVisible(LoginLocators.getWelcomeMsg());
+        if (welcomeMsg == null) {
             throw new AssertionError("El mensaje de bienvenida no se encontró en la página.");
         }
-
-
     }
 
-
-
-
-
 }
+
+
+
+
+
+
 
 

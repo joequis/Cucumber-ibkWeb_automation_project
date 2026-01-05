@@ -1,6 +1,7 @@
 package com.ibkWeb.auto.pages;
 
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,7 +56,7 @@ public abstract class BasePage {
     }
 
 
-    protected boolean waitForVisible(By locator) {
+    protected @Nullable WebElement waitForVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
