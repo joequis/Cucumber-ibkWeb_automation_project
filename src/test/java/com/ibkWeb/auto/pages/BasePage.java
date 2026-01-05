@@ -55,7 +55,7 @@ public abstract class BasePage {
     }
 
 
-    protected WebElement waitForVisible(By locator) {
+    protected boolean waitForVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }

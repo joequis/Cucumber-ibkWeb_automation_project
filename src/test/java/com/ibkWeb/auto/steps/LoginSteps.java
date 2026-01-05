@@ -22,19 +22,19 @@ public class LoginSteps {
         driver.get(EnvironmentManager.get("app.url"));
     }
 
-    @When("Ingreso las Credenciales")
-    public void ingresoCredencialesValidas() {
-        //tomo las variables del enviroment
-        String user = EnvironmentManager.get("app.username");
-        String pass = EnvironmentManager.get("app.password");
+    @When("Ingreso las Credenciales {string} y {string}")
+    public void ingresoCredencialesValidas(String user, String pass) {
+        //tomo las variables del enviroment. Ahora no, tomarlas del scenario a modo prueba
+       // String user = EnvironmentManager.get("app.username");
+       // String pass = EnvironmentManager.get("app.password");
         login.login(user, pass);
     }
 
 
-    @Then("Validar el ingreso exitoso para {string}")
-    public void validarIngresoExitosoPara(String nombre) {
+    @Then("Validar el ingreso exitoso")
+    public void validarIngresoExitosoPara() {
 
-        login.validarMensajeBienvenida(nombre);
+        login.validarMensajeBienvenida();
     }
 
 }
